@@ -1,14 +1,15 @@
-import React from 'react';
-import PropTypes from "prop-types";
+import Button from "../button";
 
 
-const Item = (props) => {
-  const removeItem = (id) => {
-    
-  };
+
+
+
+const Item = ({ car, onRemove }) => {
   return (
-    <div>{props.product.name}<button onClick={() => props.onHandleRemove(props.product.id)}>Delete</button></div>
-  )
-}
+    <li className="flex justify-between items-center p-2 border-b border-red-200">
+      {car.name} {car.price}<Button danger onClick={() => onRemove(car.id)}>  Xoa</Button>
+    </li>
+  );
+};
 
-export default Item
+export default Item;
